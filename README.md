@@ -1,5 +1,5 @@
-Nama    : Kevin Ivan Eda Radhiyya
+Nama    : Amanda Oktivia Sharfina
 
-NPM     : 2201233210
+NPM     : 2206830076
 
-Kelas   : PBP B# skincare_inventory
+Kelas   : PBP B
