@@ -134,4 +134,4 @@ JSON adalah sebuah format data yang sangat mudah dibaca oleh manusia dan memilik
     
 > Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
 
-> Melakukan add-commit-push ke GitHub.
+> Melakukan add-commit-push ke GitHub
