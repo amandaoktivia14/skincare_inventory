@@ -53,7 +53,7 @@ Saya sebagai developer akan mulai mendefinisikan rute URL aplikasi utama dengan 
 
 >2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
 
-    ![Diagram](Diagram.jpg)
+    ![Diagram](jpg/S__2965506.jpg)
 
 
 >3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
@@ -129,12 +129,14 @@ Di sisi lain, dalam form GET, data dikirimkan sebagai bagian dari URL. Data ini 
     Untuk semua fungsi "show" yang telah ditambahkan, pastikan untuk mengimpor fungsi-fungsi tersebut ke dalam file urls.py yang berada dalam folder "main". Setelah mengimpor fungsi-fungsi tersebut, tambahkan path untuk masing-masing fungsi ke dalam variabel urlpatterns. Dengan langkah ini, pengguna sekarang memiliki kemampuan untuk mengakses URL dengan berbagai format seperti HTML, XML, dan JSON, baik menggunakan aplikasi seperti Postman ataupun melalui browser.
     
  - [x] Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
-![XML](XML.jpg)
+![XML](static/xml.png)
 
-![JSON](JSON.jpg)
+![XML/1](static/xml%3A1.png)
 
-![XML/1](XML/1.jpg)
-![JSON](JSON/1.jpg)
-![Localhost](LH8000.jpg)
+![JSON](static/json.png)
+
+![JSON/1](static/json%3A1.png)
+
+![Localhost](static/LH8000.png)
 
  - [x] Melakukan add-commit-push ke GitHub
