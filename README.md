@@ -133,5 +133,10 @@ JSON adalah sebuah format data yang sangat mudah dibaca oleh manusia dan memilik
     Untuk semua fungsi "show" yang telah ditambahkan, pastikan untuk mengimpor fungsi-fungsi tersebut ke dalam file urls.py yang berada dalam folder "main". Setelah mengimpor fungsi-fungsi tersebut, tambahkan path untuk masing-masing fungsi ke dalam variabel urlpatterns. Dengan langkah ini, pengguna sekarang memiliki kemampuan untuk mengakses URL dengan berbagai format seperti HTML, XML, dan JSON, baik menggunakan aplikasi seperti Postman ataupun melalui browser.
     
 > Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
+![XML](XML.jpg)
+![JSON](JSON.jpg)
+![XML/1](XML/1.jpg)
+![JSON](JSON/1.jpg)
+![Localhost](LH8000.jpg)
 
 > Melakukan add-commit-push ke GitHub
