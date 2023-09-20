@@ -1,15 +1,12 @@
-# Adventurer's Inventory
+# Skincare Inventory
 `Amanda Oktivia Sharfina 2206830076
 PBP B`
-
-## Tautan Aplikasi
-[Link to Adventurer's Inventory](https://adventurers-inventory.adaptable.app/main)
 
 ## Tugas 2
 >1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
  - [x] Membuat sebuah proyek Django baru.
-s
+
  Pada langkah awal, saya membuat direktori lokal baru dan juga repositori GitHub baru. Selanjutnya, saya menghubungkan repositori lokal dengan repositori di GitHub dengan perintah "git branch -M main" untuk menciptakan branch utama, dan menggunakan perintah "git remote add origin <URL_REPO>" untuk mengaitkan repositori lokal dengan repositori di GitHub.
 
 Kemudian, saya membuat lingkungan virtual dengan menjalankan perintah "python -m venv env" dan mengaktifkannya dengan perintah "source env/bin/activate". Dalam keadaan lingkungan virtual yang aktif, saya menambahkan file "requirements.txt" sebagai daftar dependensi yang akan digunakan dalam proyek ini. Saya menginstal semua dependensi dari file "requirements.txt" dengan perintah "pip install -r requirements.txt".
@@ -95,25 +92,24 @@ Saya sebagai developer akan mulai mendefinisikan rute URL aplikasi utama dengan 
 
 ## Tugas 3
 >1. Apa perbedaan antara form POST dan form GET dalam Django?
+ - [x]
 Dalam form POST, informasi dikirimkan melalui tubuh permintaan HTTP, sehingga tidak terlihat dalam URL. Ini sangat berguna untuk mengirim data yang perlu dijaga kerahasiaannya, karena tidak mudah terlihat oleh pengguna. Form POST lebih cocok digunakan untuk mengirimkan data sensitif, seperti kata sandi atau informasi pribadi. Selain itu, tidak ada batasan praktis terkait panjang data yang dapat dikirimkan dengan metode POST. Form POST digunakan ketika ingin mengirimkan data yang akan diolah oleh server, seperti mengirim formulir, melakukan permintaan AJAX, atau melakukan operasi server lainnya, seperti menambahkan, mengedit, atau menghapus data.
 
 Di sisi lain, dalam form GET, data dikirimkan sebagai bagian dari URL. Data ini muncul dalam string query URL dan dapat dilihat oleh semua orang yang melihat URL tersebut. Form GET lebih sesuai untuk permintaan yang tidak memiliki dampak besar dan hanya digunakan untuk membaca data. Namun, form GET bukan pilihan yang aman ketika ingin mengirimkan data yang bersifat sensitif. Selain itu, terdapat batasan pada panjang URL yang bisa diatasi oleh browser dan server, sehingga tidak cocok digunakan untuk mengirim data yang sangat besar. Metode GET biasanya digunakan untuk mengambil data dari server, seperti menampilkan halaman web, melakukan pencarian, atau mengirimkan parameter dalam URL.
 
-Referensi: https://www.w3schools.com/tags/ref_httpmethods.asp
-
 >2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
-1. XML (eXtensible Markup Language) adalah bahasa yang mengadopsi sintaksis yang ketat dan menggunakan tag untuk merinci struktur data dan hierarkinya. Format ini diterapkan dalam berbagai konteks, termasuk konfigurasi, pertukaran data, penggunaan dalam protokol SOAP (Simple Object Access Protocol) dalam layanan web, dan lain sebagainya. XML memberikan dukungan yang kuat untuk validasi skema, komentar, dan metadata.
+ - [x] 1. XML (eXtensible Markup Language) adalah bahasa yang mengadopsi sintaksis yang ketat dan menggunakan tag untuk merinci struktur data dan hierarkinya. Format ini diterapkan dalam berbagai konteks, termasuk konfigurasi, pertukaran data, penggunaan dalam protokol SOAP (Simple Object Access Protocol) dalam layanan web, dan lain sebagainya. XML memberikan dukungan yang kuat untuk validasi skema, komentar, dan metadata.
 
 2. JSON (JavaScript Object Notation), di sisi lain, digunakan untuk pertukaran data dan merepresentasikan struktur data, serupa dengan XML, tetapi dalam format yang lebih ringkas dan mudah dibaca oleh manusia serta mudah diproses oleh mesin. JSON menggunakan format yang lebih kompak dengan objek yang mudah dibaca dan dapat dihasilkan oleh banyak bahasa pemrograman. Format JSON digunakan dalam berbagai aplikasi, termasuk pengembangan RESTful API, komunikasi antara server dan klien web, konfigurasi, serta pertukaran data antar bahasa pemrograman. Walaupun JSON tidak memiliki dukungan untuk validasi skema seperti XML, hal ini membuatnya lebih sederhana dan efisien dalam penggunaan sehari-hari.
 
 3. HTML (Hypertext Markup Language) digunakan untuk membuat tampilan halaman web dan menentukan tata letak elemen-elemen di browser web. HTML juga menggunakan sintaksis yang mirip dengan XML, mengandung tag yang mendefinisikan elemen-elemen seperti judul, paragraf, gambar, dan tautan dalam sebuah dokumen web. HTML memiliki kemampuan untuk menciptakan tampilan grafis yang interaktif di browser dan sering digunakan bersama dengan CSS (Cascading Style Sheets) dan JavaScript untuk menciptakan pengalaman pengguna yang interaktif di web.
 
 >3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern? 
-JSON adalah sebuah format data yang sangat mudah dibaca oleh manusia dan memiliki sintaksis yang ringkas. Salah satu keunggulan utama JSON adalah ukuran data yang kecil, sehingga dapat mengurangi beban pada jaringan saat data dikirimkan antar aplikasi atau perangkat. JSON digunakan untuk hampir semua bahasa pemrograman, membuatnya menjadi pilihan yang sangat fleksibel untuk pertukaran data, selain itu juga mendukung struktur data yang bersarang dan kompleks, memungkinkan representasi data yang lebih kompleks seperti objek dalam objek atau array dalam objek hal ini memudahkan pengelolaan data yang kompleks dalam aplikasi. JSON juga memiliki kemampuan untuk mendukung pembaruan parsial, yang berarti Anda dapat mengirimkan hanya bagian-bagian tertentu dari data yang berubah, mengoptimalkan penggunaan bandwidth. Hal ini sangat berguna dalam aplikasi yang mengharuskan pengiriman data secara berkala, JSON telah menjadi standar dalam desain RESTful API, memudahkan integrasi antar layanan web.
+ - [x] JSON adalah sebuah format data yang sangat mudah dibaca oleh manusia dan memiliki sintaksis yang ringkas. Salah satu keunggulan utama JSON adalah ukuran data yang kecil, sehingga dapat mengurangi beban pada jaringan saat data dikirimkan antar aplikasi atau perangkat. JSON digunakan untuk hampir semua bahasa pemrograman, membuatnya menjadi pilihan yang sangat fleksibel untuk pertukaran data, selain itu juga mendukung struktur data yang bersarang dan kompleks, memungkinkan representasi data yang lebih kompleks seperti objek dalam objek atau array dalam objek hal ini memudahkan pengelolaan data yang kompleks dalam aplikasi. JSON juga memiliki kemampuan untuk mendukung pembaruan parsial, yang berarti Anda dapat mengirimkan hanya bagian-bagian tertentu dari data yang berubah, mengoptimalkan penggunaan bandwidth. Hal ini sangat berguna dalam aplikasi yang mengharuskan pengiriman data secara berkala, JSON telah menjadi standar dalam desain RESTful API, memudahkan integrasi antar layanan web.
 
 >4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
-> Membuat input form untuk menambahkan objek model pada app sebelumnya.
+ - [x] Membuat input form untuk menambahkan objek model pada app sebelumnya.
 
     Sebelum developer mengimplementasikan Skeleton sebagai kerangka Views, langkah pertama yang harus dilakukan adalah mengubah fungsi urlpatterns pada file urls.py. Perubahan ini melibatkan mengganti path dari "main/" menjadi path yang kosong (''). 
 
@@ -123,16 +119,16 @@ JSON adalah sebuah format data yang sangat mudah dibaca oleh manusia dan memilik
 
     Selanjutnya, developer akan mengubah fungsi "show_main" pada file views.py dengan menambahkan variabel "products" yang akan diisi dengan semua instance dari objek "Product" yang ada di dalam database, menggunakan "Product.objects.all()". Hasilnya, "products" akan dimasukkan ke dalam dictionary "context". Developer akan mengimpor fungsi "create_product" ke dalam file urls.py dalam folder "main" dan akan menambahkan path URL-nya ke dalam urlpatterns. Setelah URL tersebut ditambahkan, developer akan membuat file "create_product.html" dalam folder "main/templates" untuk menampilkan form pembuatan product kepada pengguna. Terakhir, developer akan menambahkan kode pada file "main.html" agar dapat menampilkan tabel yang berisi item-item yang telah dibuat oleh pengguna.
 
-> Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID.
+ - [x] Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID.
 
     Pada tahap ini, developer telah membuat serangkaian fungsi views yang bertujuan untuk mengakses dan menampilkan data yang telah disimpan dalam aplikasi. Data ini dapat dilihat dalam beberapa format, seperti HTML, XML, dan JSON. Selama proses ini, developer telah mengimpor dua modul penting, yaitu HttpResponse untuk mengirimkan respons ke web, dan serializers untuk membantu dalam menghasilkan data dengan format yang sesuai.
 
     Setelah mengimpor modul yang diperlukan, developer telah membuat empat fungsi baru selain fungsi "show_main" (yang digunakan untuk menampilkan data dalam format HTML). Empat fungsi tersebut adalah "show_xml," "show_json," "show_xml_by_id," dan "show_json_by_id." Setiap fungsi ini mengembalikan respons HttpResponse dengan parameter yang sesuai, sesuai dengan format data yang diminta. Untuk menciptakan format data yang sesuai, developer menggunakan metode serialize.
 
-> Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2.
+ - [x] Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 
     Untuk semua fungsi "show" yang telah ditambahkan, pastikan untuk mengimpor fungsi-fungsi tersebut ke dalam file urls.py yang berada dalam folder "main". Setelah mengimpor fungsi-fungsi tersebut, tambahkan path untuk masing-masing fungsi ke dalam variabel urlpatterns. Dengan langkah ini, pengguna sekarang memiliki kemampuan untuk mengakses URL dengan berbagai format seperti HTML, XML, dan JSON, baik menggunakan aplikasi seperti Postman ataupun melalui browser.
     
-> Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
+ - [x] Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
 ![XML](XML.jpg)
 
 ![JSON](JSON.jpg)
@@ -141,4 +137,4 @@ JSON adalah sebuah format data yang sangat mudah dibaca oleh manusia dan memilik
 ![JSON](JSON/1.jpg)
 ![Localhost](LH8000.jpg)
 
-> Melakukan add-commit-push ke GitHub
+ - [x] Melakukan add-commit-push ke GitHub
