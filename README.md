@@ -24,31 +24,31 @@ Pada langkah ini, saya menginisialisasi struktur inti proyek dengan menambahkan 
 Saya sebagai developer akan mulai mendefinisikan rute URL aplikasi utama dengan menambahkan path ke dalam variabel urlpatterns pada file urls.py. Path tersebut akan terdiri dari informasi tentang route, function yang ada di dalam file views.py, dan juga parameter name. Selanjutnya, saya akan mengonfigurasi routing URL proyek dengan menambahkan path yang mencakup route dan fungsi include ke dalam variabel urlpatterns. Fungsi include ini sangat berguna karena memungkinkan saya untuk mengimpor rute URL dari aplikasi main ke dalam file urls.py proyek, sehingga proyek ini dapat berjalan dengan baik.
 
 
- - [x] Membuat model pada aplikasi `main` dengan nama `Item` dan memiliki atribut wajib sebagai berikut.
-    + `name` sebagai nama *item* dengan tipe `CharField`.
-    + `category` sebagai kategori *item* dengan tipe `CharField`.
-    + `price` sebagai harga *item* dengan tipe `IntegerField`.
-    + `amount` sebagai jumlah *item* dengan tipe `IntegerField`.
-    + `description` sebagai deskripsi *item* dengan tipe `TextField`.
-        Saya sebagai developer, membuat model yang berisi beberapa atribut bersama dengan atribut tambahan. Salah satunya adalah atribut "category" yang digunakan sebagai kategori item dengan tipe data CharField, atribut "price" yang berfungsi sebagai harga item dengan tipe data IntegerField, dan lain-lain. Setelah saya berhasil mendefinisikan semua atribut model tersebut, langkah selanjutnya adalah melakukan migrasi model ke dalam database. Untuk melakukannya, saya menjalankan perintah "python3 manage.py makemigrations" untuk membuat file migrasi yang diperlukan. Setelah file migrasi tersebut dibuat, langkah terakhir adalah menerapkannya ke dalam database dengan menjalankan perintah "python3 manage.py migrate."
+ - [x] Membuat model pada aplikasi `main` dengan nama `Product` dan memiliki atribut wajib sebagai berikut.
+    + `name` sebagai nama *product* dengan tipe `CharField`.
+    + `category` sebagai kategori *product* dengan tipe `CharField`.
+    + `price` sebagai harga *product* dengan tipe `IntegerField`.
+    + `amount` sebagai jumlah *product* dengan tipe `IntegerField`.
+    + `description` sebagai deskripsi *product* dengan tipe `TextField`.
+        Saya sebagai developer, membuat model yang berisi beberapa atribut bersama dengan atribut tambahan. Salah satunya adalah atribut "category" yang digunakan sebagai kategori product dengan tipe data CharField, atribut "price" yang berfungsi sebagai harga product dengan tipe data IntegerField, dan lain-lain. Setelah saya berhasil mendefinisikan semua atribut model tersebut, langkah selanjutnya adalah melakukan migrasi model ke dalam database. Untuk melakukannya, saya menjalankan perintah "python3 manage.py makemigrations" untuk membuat file migrasi yang diperlukan. Setelah file migrasi tersebut dibuat, langkah terakhir adalah menerapkannya ke dalam database dengan menjalankan perintah "python3 manage.py migrate."
 
 
  - [x] Membuat sebuah fungsi pada `views.py` untuk dikembalikan ke dalam sebuah *template* HTML yang menampilkan nama aplikasi serta nama dan kelas kamu.
 
-    Saya sebagai developer pertama-tama mengimpor fungsi "render" dari modul "django.shortcuts" untuk digunakan dalam proses rendering tampilan "main_page.html". Selanjutnya, mendefinisikan fungsi "show_app_name" dengan parameter "request". Tujuan dari fungsi ini adalah untuk mengatur permintaan HTTP dan menghasilkan tampilan yang sesuai dengan permintaan tersebut.
+    Saya sebagai developer pertama-tama mengimpor fungsi "render" dari modul "django.shortcuts" untuk digunakan dalam proses rendering tampilan "main_page.html". Selanjutnya, mendefinisikan fungsi "show_main" dengan parameter "request". Tujuan dari fungsi ini adalah untuk mengatur permintaan HTTP dan menghasilkan tampilan yang sesuai dengan permintaan tersebut.
 
-    Setelah itu, lanjutkan dengan menambahkan data seperti "app_name", "name", dan "class" ke dalam konteks yang ada dalam fungsi "show_app_name". Konteks ini akan digunakan untuk mengirimkan data ke tampilan HTML yang akan ditampilkan.
+    Setelah itu, lanjutkan dengan menambahkan data seperti "name", "class", dan "product" ke dalam konteks yang ada dalam fungsi "show_main". Konteks ini akan digunakan untuk mengirimkan data ke tampilan HTML yang akan ditampilkan.
 
-    Langkah terakhir, saya menggunakan perintah "return render(request, "main_page.html", context)" untuk menampilkan tampilan HTML di web server. Dengan cara ini, saya memastikan bahwa halaman "main_page.html" akan dirender dengan benar sesuai dengan konteks yang telah saya tentukan sebelumnya.
+    Langkah terakhir, saya menggunakan perintah "return render(request, "main.html", context)" untuk menampilkan tampilan HTML di web server. Dengan cara ini, saya memastikan bahwa halaman "main_page.html" akan dirender dengan benar sesuai dengan konteks yang telah saya tentukan sebelumnya.
 
 
  - [x] Membuat sebuah *routing* pada `urls.py` aplikasi `main` untuk memetakan fungsi yang telah dibuat pada `views.py`.
 
-    Pada langkah awal, saya sebagai developer mengawali dengan mengimpor modul "path" dari "django.urls" serta fungsi "show_app_name" dari berkas "views.py". Kemudian, saya memberikan sebuah label "app_name" yang saya namakan "main" untuk memberikan identitas yang unik pada pola URL dalam aplikasi ini. Setelah itu, langkah berikutnya adalah menambahkan path ke dalam variabel "urlpatterns", yang mencakup informasi mengenai rute, fungsi "show_app_name", dan parameter "name".
+    Pada langkah awal, saya sebagai developer mengawali dengan mengimpor modul "path" dari "django.urls" serta fungsi "show_main" dari berkas "views.py". Kemudian, saya memberikan sebuah label "app_name" yang saya namakan "main" untuk memberikan identitas yang unik pada pola URL dalam aplikasi ini. Setelah itu, langkah berikutnya adalah menambahkan path ke dalam variabel "urlpatterns", yang mencakup informasi mengenai rute, fungsi "show_main", dan parameter "name".
 
  - [x] Melakukan *deployment* ke Adaptable terhadap aplikasi yang sudah dibuat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.
 
-    Setelah semua poin dalam checklist telah selesai, developer melakukan push semua perubahan yang telah dibuat ke dalam GitHub. Pertama, developer menjalankan perintah git add . untuk mengambil seluruh perubahan yang belum di-stage. Kemudian developer menjalankan perintah git commit -m "<komentar>" dan git push -u origin main. Setelah berhasil melakukan push semua perubahan ke repositori GitHub,lanjutkan dengan proses deploy aplikasi menggunakan layanan Adapatable.io. Saya menggunakan repositori GitHub proyek "skincare_inventory" dan branch "main." Selanjutnya, saya memilih Python App Template dan mengkonfigurasi PostgreSQL sebagai database yang akan digunakan. Saya juga menyesuaikan versi Python yang akan digunakan di dalam lingkungan virtual, yaitu versi 3.11. menetapkan perintah python manage.py migrate && gunicorn skincare_inventory_App.wsgi pada bagian start command, memasukkan nama aplikasi, yaitu skincare_inventory, mencentang opsi HTTP Listener on PORT, dan klik Deploy.
+    Setelah semua poin dalam checklist telah selesai, developer melakukan push semua perubahan yang telah dibuat ke dalam GitHub. Pertama, developer menjalankan perintah git add . untuk mengambil seluruh perubahan yang belum di-stage. Kemudian developer menjalankan perintah git commit -m "<komentar>" dan git push origin main. Setelah berhasil melakukan push semua perubahan ke repositori GitHub,lanjutkan dengan proses deploy aplikasi menggunakan layanan Adapatable.io. Saya menggunakan repositori GitHub proyek "skincare_inventory" dan branch "main." Selanjutnya, saya memilih Python App Template dan mengkonfigurasi PostgreSQL sebagai database yang akan digunakan. Saya juga menyesuaikan versi Python yang akan digunakan di dalam lingkungan virtual, yaitu versi 3.10. menetapkan perintah python manage.py migrate && gunicorn skincare_inventory_App.wsgi pada bagian start command, memasukkan nama aplikasi, yaitu skincare_inventory, mencentang opsi HTTP Listener on PORT, dan klik Deploy.
 
 
 >2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
