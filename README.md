@@ -1,6 +1,6 @@
-# Skincare Inventory
+# Vivi's Skincare Inventory
 `Amanda Oktivia Sharfina 2206830076
-PBP B`
+(PBP-B)`
 
 ## Tugas 2
 >1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
@@ -58,37 +58,37 @@ Saya sebagai developer akan mulai mendefinisikan rute URL aplikasi utama dengan 
 
 >3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 
-    Kita memanfaatkan virtual environment untuk mengatur dan membatasi dependensi yang diperlukan oleh proyek Python agar terisolasi. Dependensi ini merujuk kepada komponen-komponen atau modul-modul yang diperlukan oleh perangkat lunak, seperti library, framework, atau package tertentu. Setiap proyek biasanya memiliki spesifikasi yang unik. Salah satu keuntungan utama adalah kita dapat menginstal versi-dependensi yang sesuai dengan kebutuhan proyek dalam virtual environment tertentu tanpa mempengaruhi instalasi Python global pada sistem.
+- [x] Kita memanfaatkan virtual environment untuk mengatur dan membatasi dependensi yang diperlukan oleh proyek Python agar terisolasi. Dependensi ini merujuk kepada komponen-komponen atau modul-modul yang diperlukan oleh perangkat lunak, seperti library, framework, atau package tertentu. Setiap proyek biasanya memiliki spesifikasi yang unik. Salah satu keuntungan utama adalah kita dapat menginstal versi-dependensi yang sesuai dengan kebutuhan proyek dalam virtual environment tertentu tanpa mempengaruhi instalasi Python global pada sistem.
 
-    Pemanfaatan virtual environment memiliki kepentingan signifikan dan memberi berbagai keuntungan, seperti kemudahan dalam manajemen, stabilitas, portabilitas, dan isolasi. Meskipun demikian, membangun aplikasi web berbasis Django masih memungkinkan tanpa menggunakan virtual environment. Namun, ada beberapa aspek yang perlu diperhatikan agar dapat menghindari potensi masalah. Jika Anda menginstal paket yang sama untuk dua aplikasi web Django berbeda, mungkin akan muncul konflik paket. Selain itu, ketika Anda ingin mendeploy aplikasi web Django ke server, Anda harus memastikan bahwa semua paket yang dibutuhkan telah terpasang di server tersebut. Inti dari permasalahan ini terletak pada keberadaan berkas requirements.txt. Ketika Anda sudah menginisialisasi lingkungan virtual, requirements.txt menjadi alat yang sangat berguna bagi penyedia layanan hosting untuk mengelola dan menjalankan aplikasi Django dengan lebih efisien, aman, dan konsisten dalam lingkungan hosting.
+Pemanfaatan virtual environment memiliki kepentingan signifikan dan memberi berbagai keuntungan, seperti kemudahan dalam manajemen, stabilitas, portabilitas, dan isolasi. Meskipun demikian, membangun aplikasi web berbasis Django masih memungkinkan tanpa menggunakan virtual environment. Namun, ada beberapa aspek yang perlu diperhatikan agar dapat menghindari potensi masalah. Jika Anda menginstal paket yang sama untuk dua aplikasi web Django berbeda, mungkin akan muncul konflik paket. Selain itu, ketika Anda ingin mendeploy aplikasi web Django ke server, Anda harus memastikan bahwa semua paket yang dibutuhkan telah terpasang di server tersebut. Inti dari permasalahan ini terletak pada keberadaan berkas requirements.txt. Ketika Anda sudah menginisialisasi lingkungan virtual, requirements.txt menjadi alat yang sangat berguna bagi penyedia layanan hosting untuk mengelola dan menjalankan aplikasi Django dengan lebih efisien, aman, dan konsisten dalam lingkungan hosting.
 
 >4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
 
-        + Arsitektur desain Model View Controller memecah kode menjadi tiga bagian utama: Model, View, dan Controller.
+- [x] Arsitektur desain Model View Controller memecah kode menjadi tiga bagian utama: Model, View, dan Controller.
 
-            Model: Bagian ini berisi logika bisnis untuk mengambil dan mengelola data, berkomunikasi dengan pengontrol, berinteraksi dengan database, dan melakukan pembaruan terhadap tampilan.
+    Model: Bagian ini berisi logika bisnis untuk mengambil dan mengelola data, berkomunikasi dengan pengontrol, berinteraksi dengan database, dan melakukan pembaruan terhadap tampilan.
 
-            View: User Interface mengandung elemen-elemen seperti HTML, CSS, dan XML. Terkadang, tampilan berinteraksi dengan pengontrol dan terkadang juga berhubungan dengan model. Melalui pengontrol, data dinamis kadang-kadang melewati beberapa tampilan.
+    View: User Interface mengandung elemen-elemen seperti HTML, CSS, dan XML. Terkadang, tampilan berinteraksi dengan pengontrol dan terkadang juga berhubungan dengan model. Melalui pengontrol, data dinamis kadang-kadang melewati beberapa tampilan.
 
-            Controller: Komponen ini sering kali dikenal sebagai Aktivitas atau Fragmen. Pengontrol ini menjalin komunikasi antara tampilan dan model. Pengontrol menerima masukan pengguna dari layanan tampilan atau REST. Selanjutnya, pengontrol mengambil data dari model, memproses permintaan, dan meneruskannya ke tampilan.
+    Controller: Komponen ini sering kali dikenal sebagai Aktivitas atau Fragmen. Pengontrol ini menjalin komunikasi antara tampilan dan model. Pengontrol menerima masukan pengguna dari layanan tampilan atau REST. Selanjutnya, pengontrol mengambil data dari model, memproses permintaan, dan meneruskannya ke tampilan.
 
-        + MVP populer karena memberikan modularitas, kemampuan pengujian, dan basis kode yang lebih bersih dan mudah dipelihara yang membantu meningkatkan logika presentasi kode.
+- [x] MVP populer karena memberikan modularitas, kemampuan pengujian, dan basis kode yang lebih bersih dan mudah dipelihara yang membantu meningkatkan logika presentasi kode.
         
-            Model: Lapisan untuk menyimpan data. Ini menangani logika domain (aturan bisnis aktual) dan bertanggung jawab untuk berkomunikasi dengan database dan lapisan jaringan.
+        Model: Lapisan untuk menyimpan data. Ini menangani logika domain (aturan bisnis aktual) dan bertanggung jawab untuk berkomunikasi dengan database dan lapisan jaringan.
 
-            View: Ini adalah lapisan UI (antarmuka pengguna). Ini menyediakan visualisasi data dan digunakan untuk melacak tindakan pengguna sehingga kami dapat memberi tahu penyaji.
+        View: Ini adalah lapisan UI (antarmuka pengguna). Ini menyediakan visualisasi data dan digunakan untuk melacak tindakan pengguna sehingga kami dapat memberi tahu penyaji.
 
-            Presenter: Dibutuhkan data dari model dan menerapkan logika UI untuk menentukan apa yang harus kita tampilkan kepada pengguna. Ini berguna karena mengelola status tampilan dan mengambil tindakan sesuai dengan notifikasi yang dimasukkan pengguna dari tampilan.
+        Presenter: Dibutuhkan data dari model dan menerapkan logika UI untuk menentukan apa yang harus kita tampilkan kepada pengguna. Ini berguna karena mengelola status tampilan dan mengambil tindakan sesuai dengan notifikasi yang dimasukkan pengguna dari tampilan.
 
-        + Pola MVVM memiliki beberapa kesamaan dengan pola desain MVP di mana ViewModel mewarisi peran presenter. Kami mengatasi kekurangan pola MVP dengan MVVM. Model ini menyarankan pemisahan logika presentasi data (tampilan atau UI) dari bagian logika bisnis inti aplikasi. 
+- [x] Pola MVVM memiliki beberapa kesamaan dengan pola desain MVP di mana ViewModel mewarisi peran presenter. Kami mengatasi kekurangan pola MVP dengan MVVM. Model ini menyarankan pemisahan logika presentasi data (tampilan atau UI) dari bagian logika bisnis inti aplikasi. 
 
-            Model: Lapisan ini terutama bertanggung jawab atas abstraksi sumber data. Model dan ViewModel bekerja sama untuk mendapatkan dan menyimpan data.
+        Model: Lapisan ini terutama bertanggung jawab atas abstraksi sumber data. Model dan ViewModel bekerja sama untuk mendapatkan dan menyimpan data.
 
-            View: Lapisan ini bertujuan untuk menginformasikan model tampilan tindakan pengguna. Lapisan ini memonitor ViewModel dan tidak mengandung logika aplikasi apa pun.
+        View: Lapisan ini bertujuan untuk menginformasikan model tampilan tindakan pengguna. Lapisan ini memonitor ViewModel dan tidak mengandung logika aplikasi apa pun.
 
-            ViewModel: Mengekspos aliran data yang terkait dengan tampilan. Ini juga bertindak sebagai penghubung antara model dan tampilan.
+        ViewModel: Mengekspos aliran data yang terkait dengan tampilan. Ini juga bertindak sebagai penghubung antara model dan tampilan.
     
-    Letak perbedaannya antara MVC, MVT, dan MVVM adalah komponen selain Model dan View, yaitu Controller dalam MVC, Template dalam MVT, dan ViewModel dalam MVVM.
+ - [x] Letak perbedaannya antara MVC, MVT, dan MVVM adalah komponen selain Model dan View, yaitu Controller dalam MVC, Template dalam MVT, dan ViewModel dalam MVVM.
 
 ## Tugas 3
 >1. Apa perbedaan antara form POST dan form GET dalam Django?
@@ -164,11 +164,11 @@ Otorisasi : Proses yang menentukan diizinkannya atau tidak penggunayang telah me
 
 >3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
 
-    - [x] Cookies adalah data kecil yang disimpan pada perangkat klien. Umumnya dalam peramban web oleh server aplikasi web ketika pengguna berinteraksi dengan situs web, Cookies bertugas menyimpan informasi yang dapat diakses oleh server saat klien melakukan permintaan selanjutnya. 
+- [x] Cookies adalah data kecil yang disimpan pada perangkat klien. Umumnya dalam peramban web oleh server aplikasi web ketika pengguna berinteraksi dengan situs web, Cookies bertugas menyimpan informasi yang dapat diakses oleh server saat klien melakukan permintaan selanjutnya. 
 
-    - [x] Dalam aplikasi web, Cookies dimanfaatkan untuk mengelola sesi pengguna, menyimpan preferensi pengguna, melacak aktivitas pengguna, dsb.
+- [x] Dalam aplikasi web, Cookies dimanfaatkan untuk mengelola sesi pengguna, menyimpan preferensi pengguna, melacak aktivitas pengguna, dsb.
 
-    - [x] Django menggunakan cookies untuk mengelola data sesi pengguna dengan bantuan modul django.contrib.sessions.
+- [x] Django menggunakan cookies untuk mengelola data sesi pengguna dengan bantuan modul django.contrib.sessions.
 
 >4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
 
@@ -184,13 +184,13 @@ Otorisasi : Proses yang menentukan diizinkannya atau tidak penggunayang telah me
 
 - [x] Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar.
 
-Developer telah melakukan beberapa tindakan dalam pengembangan situs web:
+    Developer telah melakukan beberapa tindakan dalam pengembangan situs web:
 
-    - Register: Developer membuat fungsi `register` yang menggunakan `UserCreationForm` untuk mengatur pembuatan akun pada situs web. Ini memungkinkan pengguna untuk mendaftar dan membuat akun baru.
+    1. Register: Developer membuat fungsi `register` yang menggunakan `UserCreationForm` untuk mengatur pembuatan akun pada situs web. Ini memungkinkan pengguna untuk mendaftar dan membuat akun baru.
 
-    - Login: Developer juga membuat fungsi `login_user` untuk mengelola proses otentikasi pengguna. Fungsi ini memungkinkan pengguna untuk melakukan login dengan mengidentifikasi diri mereka dengan username dan password.
+    2. Login: Developer juga membuat fungsi `login_user` untuk mengelola proses otentikasi pengguna. Fungsi ini memungkinkan pengguna untuk melakukan login dengan mengidentifikasi diri mereka dengan username dan password.
 
-    - Logout: Developer memiliki fungsi `logout_user` yang memungkinkan pengguna untuk keluar atau logout dari halaman mereka.
+    3. Logout: Developer memiliki fungsi `logout_user` yang memungkinkan pengguna untuk keluar atau logout dari halaman mereka.
 
     Dalam berkas views.py dan dengan mendaftarkan rute URL dalam daftar urlpatterns pada berkas main/urls.py, developer telah memungkinkan user untuk mengakses halaman melalui tautan. Selanjutnya, developer menambahkan dekorator @login_required pada fungsi show_main agar hanya user yang telah melakukan login yang dapat mengakses halaman tersebut.
 
@@ -211,8 +211,6 @@ Developer telah melakukan beberapa tindakan dalam pengembangan situs web:
 
 - [x] Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.
 
-    Developer melakukan beberapa perubahan pada fungsi "show_main" dan template "main.html" untuk dapat menampilkan informasi tentang user yang saat ini sedang login dan juga mencantumkan waktu terakhir kali login. Dalam fungsi "login_user," developer menambahkan logika untuk membuat cookie bernama "last_login" yang akan mencatat waktu terakhir pengguna melakukan login. Selanjutnya, developer memasukkan data ini ke dalam konteks yang akan digunakan dalam fungsi "show_main."
-
-    Selain itu, developer juga menambahkan kode dalam fungsi "logout_user" untuk menghapus cookie "last_login" saat pengguna melakukan logout. Terakhir, developer menambahkan teks pada template "main.html" agar dapat menampilkan kepada pengguna kapan mereka terakhir kali melakukan login.
+    Developer melakukan beberapa perubahan pada fungsi "show_main" dan template "main.html" untuk dapat menampilkan informasi tentang user yang saat ini sedang login dan juga mencantumkan waktu terakhir kali login. Dalam fungsi "login_user," developer menambahkan logika untuk membuat cookie bernama "last_login" yang akan mencatat waktu terakhir user melakukan login. Selanjutnya, developer memasukkan data ini ke dalam konteks yang akan digunakan dalam fungsi "show_main." Selain itu, developer juga menambahkan kode dalam fungsi "logout_user" untuk menghapus cookie "last_login" saat user melakukan logout. Terakhir, developer menambahkan teks pada template "main.html" agar dapat menampilkan kepada pengguna kapan mereka terakhir kali melakukan login.
 
 - [x] Lakukan add-commit-push ke GitHub repository.
