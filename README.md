@@ -140,3 +140,79 @@ Di sisi lain, dalam form GET, data dikirimkan sebagai bagian dari URL. Data ini 
 ![Localhost](static/LH8000.png)
 
  - [x] Melakukan add-commit-push ke GitHub
+
+## Tugas 4
+>1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
+
+ - [x] UserCreationForm adalah sebuah bentuk form yang disediakan oleh Django untuk menyederhanakan proses pembuatan user baru dalam aplikasi web. Form ini digunakan untuk mengumpulkan informasi yang dibutuhkan dari user saat mereka mendaftar atau membuat akun baru di situs web Anda. Form ini biasanya digunakan bersama dengan model bawaan Django User, yang menyimpan informasi pengguna seperti username, password, email, dan sebagainya.
+
+ - [x] Kelebihan dari penggunaan UserCreationForm dalam Django:
+
+    1. Kemudahan Penggunaan: UserCreationForm menyediakan semua logika yang diperlukan untuk membuat formulir pendaftaran pengguna. Pengembang hanya perlu mengimpor dan menggunakannya dalam tampilan Django, tanpa harus menulis kode form dari awal.
+
+    2. Validasi Terintegrasi: Form ini sudah dilengkapi dengan validasi terintegrasi untuk memastikan bahwa informasi yang dimasukkan oleh pengguna sesuai dengan aturan yang ditetapkan, seperti memeriksa kekuatan kata sandi, kelengkapan alamat email, dan sebagainya.
+
+    3. Kompatibilitas dengan Model User: UserCreationForm dirancang untuk berfungsi dengan model pengguna bawaan Django (User model). Hal ini membuatnya sangat mudah untuk mengintegrasikan pendaftaran pengguna dengan basis data Django.
+
+>2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+
+- [x] Autentikasi : Proses verifikasi identitas pengguna untuk memastikan bahwa yang mengakses website atau sistem adalah orang yang sesuai atau sudah terdaftar. Dalam proses ini user diharapkan login dengan memasukkan username dan password yang sesuai.
+
+Otorisasi : Proses yang menentukan diizinkannya atau tidak penggunayang telah melewati autentikasi. Hal ini berkaitan dengan hak akses atau izin yang dimiliki oleh user dalam website atau sitem yang mau diakses. Otorisasi akan menentukan apa yang bisa mereka lakukan dalam aplikasi, misalnya, apakah mereka dapat mengedit profil mereka, mengakses halaman tertentu, atau hanya dapat membaca konten.
+
+- [x] Keduanya sangat penting untuk memastikan hanya user sah yang dapat mengakses website atau sistem dan membatasi akses ke tindakan atau informasi tertentu, hal ini tentunya berguna untuk membantu menjaga keamanan data dan sumber daya.
+
+>3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+
+    - [x] Cookies adalah data kecil yang disimpan pada perangkat klien. Umumnya dalam peramban web oleh server aplikasi web ketika pengguna berinteraksi dengan situs web, Cookies bertugas menyimpan informasi yang dapat diakses oleh server saat klien melakukan permintaan selanjutnya. 
+
+    - [x] Dalam aplikasi web, Cookies dimanfaatkan untuk mengelola sesi pengguna, menyimpan preferensi pengguna, melacak aktivitas pengguna, dsb.
+
+    - [x] Django menggunakan cookies untuk mengelola data sesi pengguna dengan bantuan modul django.contrib.sessions.
+
+>4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+
+- [x] Menggunakan cookies dalam pengembangan web aman jika diterapkan dan dipelihara dengan benar. Namun terdapat beberapa resiko potensial yang perlu diwaspadai yakni: 
+
+    1. Potensi Pelanggaran Privasi: Cookies dapat digunakan untuk melacak perilaku pengguna di seluruh situs web dan dalam beberapa kasus, bahkan di seluruh internet. Hal ini dapat membahayakan privasi pengguna jika data yang dikumpulkan disalahgunakan. 
+
+    2. Cross-Site Scripting (XSS): Jika suatu situs web rentan terhadap serangan XSS, penyerang dapat menyisipkan skrip berbahaya dalam cookie pengguna. Kemudian, skrip ini dapat dijalankan di peramban pengguna saat mereka mengakses situs web tersebut, yang dapat mengancam keamanan pengguna.
+
+    3. Cross-Site Request Forgery (CSRF): Cookies yang digunakan untuk autentikasi dan otorisasi dapat menjadi sasaran serangan CSRF jika tidak diatur dengan benar. Serangan CSRF dapat memengaruhi pengguna yang sudah diautentikasi dan memungkinkan penyerang untuk melakukan tindakan atas nama pengguna tersebut tanpa izin.
+
+>5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+- [x] Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar.
+
+Developer telah melakukan beberapa tindakan dalam pengembangan situs web:
+
+    - Register: Developer membuat fungsi `register` yang menggunakan `UserCreationForm` untuk mengatur pembuatan akun pada situs web. Ini memungkinkan pengguna untuk mendaftar dan membuat akun baru.
+
+    - Login: Developer juga membuat fungsi `login_user` untuk mengelola proses otentikasi pengguna. Fungsi ini memungkinkan pengguna untuk melakukan login dengan mengidentifikasi diri mereka dengan username dan password.
+
+    - Logout: Developer memiliki fungsi `logout_user` yang memungkinkan pengguna untuk keluar atau logout dari halaman mereka.
+
+    Dalam berkas views.py dan dengan mendaftarkan rute URL dalam daftar urlpatterns pada berkas main/urls.py, developer telah memungkinkan user untuk mengakses halaman melalui tautan. Selanjutnya, developer menambahkan dekorator @login_required pada fungsi show_main agar hanya user yang telah melakukan login yang dapat mengakses halaman tersebut.
+
+    Untuk memungkinkan user melihat data dalam format HTML, developer membuat dua template baru, yaitu register.html untuk melakukan pendaftaran pengguna baru dan login.html untuk masuk ke halaman pengguna yang telah ada. Developer juga melakukan modifikasi pada fungsi show_main dan template main.html agar hanya item yang dibuat oleh pengguna yang saat ini sedang login yang dapat terlihat. Selain itu, pada template main.html, developer menambahkan tombol logout yang memungkinkan pengguna untuk keluar dari halaman pengguna mereka.
+
+- [x] Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal.
+
+    Pada halaman refister, Developer membuat dua akun:
+
+    1. Akun pertama memiliki username "amandaos" dan password "vivi5678".
+    2. Akun kedua memiliki username "sharfeenna" dan password "vivi1234".
+
+    Selanjutnya, developer meng-input tiga buah product untuk setiap pengguna yang telah dibuat.
+
+- [x] Menghubungkan model Product dengan User.
+
+    Developer melakukan penghubungan antara model "Product" dengan model "User" agar setiap product yang dibuat memiliki atribut user yang mengidentifikasikan siapa yang membuat product tersebut. Ini dilakukan dengan menambahkan atribut "user" ke dalam model "Product" menggunakan metode "ForeignKey" untuk menghubungkannya dengan model "User". Setelah itu, developer menambahkan filter berdasarkan pengguna pada fungsi "show_main" sehingga yang ditampilkan hanyalah product yang telah dibuat oleh pengguna tertentu. Terakhir, developer melakukan migrasi baru pada proyek untuk menyimpan semua perubahan yang dilakukan pada berkas "models.py".
+
+- [x] Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.
+
+    Developer melakukan beberapa perubahan pada fungsi "show_main" dan template "main.html" untuk dapat menampilkan informasi tentang user yang saat ini sedang login dan juga mencantumkan waktu terakhir kali login. Dalam fungsi "login_user," developer menambahkan logika untuk membuat cookie bernama "last_login" yang akan mencatat waktu terakhir pengguna melakukan login. Selanjutnya, developer memasukkan data ini ke dalam konteks yang akan digunakan dalam fungsi "show_main."
+
+    Selain itu, developer juga menambahkan kode dalam fungsi "logout_user" untuk menghapus cookie "last_login" saat pengguna melakukan logout. Terakhir, developer menambahkan teks pada template "main.html" agar dapat menampilkan kepada pengguna kapan mereka terakhir kali melakukan login.
+
+- [x] Lakukan add-commit-push ke GitHub repository.
