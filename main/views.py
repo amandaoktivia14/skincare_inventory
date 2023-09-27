@@ -90,3 +90,26 @@ def logout_user(request):
     response.delete_cookie('last_login')
     return response
     # return redirect('main:login')
+
+def add_product(request, id_product):
+    product = Product.objects.get(pk = id_product)
+    product.amount += 1
+    product.save()
+    return redirect('main:show_main')
+
+def reduce_product(request, id_product):
+    product = Product.objects.get(pk = id_product)
+    if product.amount > 0:
+        product.amount -= 1
+        product.save()
+    else:
+        messages.info(request, f'{product.name} is already 0')
+    return redirect('main:show_main')
+
+def delete_product(request, id_product):
+    product = Product.objects.get(pk = id_product)
+    product.delete()
+    return redirect('main:show_main')
+
+
+
