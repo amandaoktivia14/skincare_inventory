@@ -214,3 +214,34 @@ Otorisasi : Proses yang menentukan diizinkannya atau tidak penggunayang telah me
     Developer melakukan beberapa perubahan pada fungsi "show_main" dan template "main.html" untuk dapat menampilkan informasi tentang user yang saat ini sedang login dan juga mencantumkan waktu terakhir kali login. Dalam fungsi "login_user," developer menambahkan logika untuk membuat cookie bernama "last_login" yang akan mencatat waktu terakhir user melakukan login. Selanjutnya, developer memasukkan data ini ke dalam konteks yang akan digunakan dalam fungsi "show_main." Selain itu, developer juga menambahkan kode dalam fungsi "logout_user" untuk menghapus cookie "last_login" saat user melakukan logout. Terakhir, developer menambahkan teks pada template "main.html" agar dapat menampilkan kepada pengguna kapan mereka terakhir kali melakukan login.
 
 - [x] Lakukan add-commit-push ke GitHub repository.
+
+
+## Tugas 5
+>1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya
+
+- [x] Element Selectror adalah jenis selektor CSS yang digunakan untuk menargetkan elemen dalam HTML berdasarkan jenis tagnya. Setiap jenis selektor CSS memiliki kegunaan dan penggunaan yang berbeda, tergantung pada kebutuhan desain dan struktur HTML yang sedang digunakan.
+
+- [x] 1. Selektor Elemen (Tag) 
+    Manfaat = Selektor ini digunakan untuk merujuk pada semua elemen HTML yang memiliki jenis tag tertentu. Ini adalah jenis selektor yang sangat umum dan mempengaruhi semua elemen yang cocok dengan jenis tag tersebut.
+
+    Waktu = Selektor elemen sangat berguna ketika Anda ingin menerapkan gaya yang serupa ke semua elemen yang memiliki jenis tag yang sama. Sebagai contoh, dapat menggunakan selektor elemen cocok untuk mengatur gaya default untuk semua paragraf (<p>) atau semua judul level 1 (<h1>) di halaman web.
+
+    2. Selektor Universal (*)
+    Manfaat = Selektor ini memilih semua elemen di dalam dokumen HTML. Ini merupakan pilihan yang sangat kuat dan bisa digunakan untuk mengatur gaya default atau menghapus margin/padding di seluruh halaman.
+
+    Waktu = Penggunaan selektor ini harus dilakukan dengan hati-hati karena dapat berdampak pada semua elemen dalam halaman. Sebaiknya digunakan untuk mengatur reset CSS atau mengatur gaya default di tingkat tinggi.
+
+    3. Selektor ID (#id)
+    Manfaat = Selektor ini digunakan untuk memilih elemen berdasarkan atribut id yang unik. Ini memberikan kemampuan untuk secara khusus menargetkan dan merujuk pada elemen tertentu dalam dokumen.
+
+    Waktu = Selektor ini berguna ketika Anda perlu mengatur gaya untuk satu elemen individual yang memiliki atribut id yang unik. Selain itu, dalam konteks JavaScript, selektor ini digunakan untuk merujuk ke elemen tertentu yang dibutuhkan.
+
+    4. Selektor Kelas (.class)
+    Manfaat = Selektor ini berguna untuk memilih elemen berdasarkan atribut class. Ini ideal untuk menerapkan gaya serupa pada sejumlah elemen.
+
+    Waktu = Penggunaan selektor ini sangat tepat ketika Anda ingin menerapkan gaya yang serupa pada beberapa elemen yang memiliki atribut class yang sama atau ketika Anda ingin menambahkan perilaku JavaScript ke elemen-elemen serupa.
+
+    5. Selektor Atribut ([attribute]) 
+    Manfaat = Selektor ini memberikan Anda kemampuan untuk memilih elemen berdasarkan atribut-atribut HTML mereka, seperti href, src, atau bahkan atribut kustom yang Anda buat sendiri.
+
+    Waktu = Seletor ini berguna ketika Anda ingin memilih elemen berdasarkan atribut tertentu. Sebagai contoh, Anda dapat menggunakannya untuk mengatur gaya untuk semua tautan eksternal (elemen `<a>` dengan atribut `href` yang merujuk ke luar).
