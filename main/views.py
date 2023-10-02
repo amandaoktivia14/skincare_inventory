@@ -106,10 +106,31 @@ def reduce_product(request, id_product):
         messages.info(request, f'{product.name} is already 0')
     return redirect('main:show_main')
 
+
 def delete_product(request, id_product):
+    # Get data berdasarkan ID
     product = Product.objects.get(pk = id_product)
+    # Hapus data
     product.delete()
-    return redirect('main:show_main')
+    # Kembali ke halaman awal
+    return HttpResponseRedirect(reverse('main:show_main'))
+
+def edit_product(request, id_product):
+    # Get product berdasarkan ID
+    product = Product.objects.get(pk = id_product)
+
+    # Set product sebagai instance dari form
+    form = ProductForm(request.POST or None, instance=product)
+
+    if form.is_valid() and request.method == "POST":
+        # Simpan form dan kembali ke halaman awal
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_product.html", context)
+
+
 
 
 

@@ -5,29 +5,94 @@
 {% endblock meta %}
 
 {% block content %}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color:  #ffe4e1;
+        color: #ff6b81;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 
-<div class = "login">
+    .login {
+        width: 400px;
+        background: #fff;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
 
+    h1 {
+        text-align: center;
+        color: #ff6b81;
+        margin-bottom: 20px;
+    }
+
+    label {
+        color: #ff6b81;
+        font-size: 17px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        height: 30px;
+        border: none;
+        border-radius: 3px;
+        padding: 8px;
+        margin-bottom: 20px;
+        color: #ff6b81;
+        border: 1px solid #ff6b81;
+        font-size: 12;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        height: 40px;
+        background-color: #ff6b81;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #ff4757;
+    }
+
+    span {
+        color: white;
+        font-size: 17px;
+    }
+
+    a {
+        float: right;
+        background-color: grey;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: #fff;
+    }
+
+    a:hover {
+        background-color: #555;
+    }
+</style>
+<div class="login">
     <h1>Login</h1>
-
     <form method="POST" action="">
         {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
+        <label for="username">Username:</label>
+        <input type="text" name="username" placeholder="Username" required>
 
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="Password" required>
+
+        <input class="btn login_btn" type="submit" value="Login">
     </form>
 
     {% if messages %}
@@ -36,10 +101,9 @@
                 <li>{{ message }}</li>
             {% endfor %}
         </ul>
-    {% endif %}     
-        
-    Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
+    {% endif %}
 
+    Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
 </div>
 
 {% endblock content %}

@@ -1,67 +1,130 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Skincare by Vivi Page</h1>
+    <style>
+        /* Style for the pink table */
+        body {
+            background-color: #f9e6e6; /* Soft pink background */
+            font-family: Arial, sans-serif;
+        }
 
-    <h5>Name:</h5>
-    <p>{{name}}</p>
+        h1 {
+            text-align: center;
+            color: #ff6b81; /* Pink header text color */
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        h5 {
+            color: #ff6b81; /* Pink subtitle text color */
+            margin-top: 10px;
+        }
+
+        p {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff; /* White table background */
+            border: 2px solid #ff6b81; /* Pink table border */
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ff6b81; /* Pink border for table rows */
+        }
+
+        th {
+            background-color: #ff6b81;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fff; /* White background for even rows */
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f9e6e6; /* Soft pink background for odd rows */
+        }
+
+        /* Style for buttons */
+        button {
+            background-color: #ff6b81;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff6b81; /* Darker pink on hover */
+        }
+
+        /* Additional styling for links */
+        a {
+            text-decoration: none;
+        }
+    </style>
+
+    <h1>Skincare Inventory Page</h1>
+
+    <h5>Customer Name:</h5>
+    <p>{{ name }}</p>
 
     <h5>Class:</h5>
-    <p>{{class}}</p>
-    ...
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Description</th>
-        <th>Date Added</th>
-    </tr>
+    <p>{{ class }}</p>
 
-    {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
+    <!-- Rest of your code -->
 
-    {% for product in products %}
+    <table>
         <tr>
-            <td>{{product.name}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.date_added}}</td>
-
-            <td>
-            <a href="{% url 'main:reduce_product' product.id %}">
-                <button>-</button>
-           </a>
-           <span>{{ product.amount }}</span>
-           <a href="{% url 'main:add_product' product.id %}">
-               <button>+</button>
-           </a> </td>
-
-           <td>
-            <a href="{% url 'main:delete_product' product.id %}">
-                 <button>
-                      Delete Product
-                 </button>
-            </a> </td>
-
-
-
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Date Added</th>
+            <th>Action</th>
         </tr>
-    {% endfor %}
-</table>
 
-<br />
+        {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
 
-<a href="{% url 'main:create_product' %}">
-    <button>
-        Add New Product
-    </button>
-</a>
-<h5>Sesi terakhir login: {{ last_login }}</h5>
-<a href="{% url 'main:logout' %}">
-    <button>
-        Logout
-    </button>
-</a>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.date_added }}</td>
 
+                <td>
+                    <a href="{% url 'main:reduce_product' product.id %}">
+                        <button>-</button>
+                    </a>
+                    <span>{{ product.amount }}</span>
+                    <a href="{% url 'main:add_product' product.id %}">
+                        <button>+</button>
+                    </a>
+                    <a href="{% url 'main:delete_product' product.id %}">
+                        <button>Delete</button>
+                    </a>
+                    <a href="{% url 'main:edit_product' product.id %}">
+                        <button>Edit</button>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
 
+    <br />
 
+    <a href="{% url 'main:create_product' %}">
+        <button>Add New Product</button>
+    </a>
+
+    <h5>Last login: {{ last_login }}</h5>
+    <a href="{% url 'main:logout' %}">
+        <button>Logout</button>
+    </a>
 {% endblock content %}

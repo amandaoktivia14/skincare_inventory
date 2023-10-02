@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    /* Add your custom styles here */
+    body {
+        background-color: #f8f8f8; /* Light gray background */
+        color: #ff6b81;
+    }
+    
+    h1 {
+        color: #ff6b81; /* Soft pink for the heading */
+    }
+    
+    form {
+        background-color: #ffe4e1; /* White background for the form */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Soft box shadow */
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    th, td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd; /* Light gray border */
+    }
+    
+    input[type="text"], input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    input[type="submit"] {
+        background-color: #ff6b81; /* Soft pink for the submit button */
+        color: #fff; /* White text color */
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    input[type="submit"]:hover {
+        background-color: #ff4057; /* Darker pink on hover */
+    }
+</style>
+
+<h1>Edit Product</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Edit Product"/>
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
