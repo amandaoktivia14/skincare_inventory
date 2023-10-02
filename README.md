@@ -224,7 +224,7 @@ Otorisasi : Proses yang menentukan diizinkannya atau tidak penggunayang telah me
 - [x] 1. Selektor Elemen (Tag) 
     Manfaat = Selektor ini digunakan untuk merujuk pada semua elemen HTML yang memiliki jenis tag tertentu. Ini adalah jenis selektor yang sangat umum dan mempengaruhi semua elemen yang cocok dengan jenis tag tersebut.
 
-    Waktu = Selektor elemen sangat berguna ketika Anda ingin menerapkan gaya yang serupa ke semua elemen yang memiliki jenis tag yang sama. Sebagai contoh, dapat menggunakan selektor elemen cocok untuk mengatur gaya default untuk semua paragraf (<p>) atau semua judul level 1 *(<h1>)* di halaman web.
+    Waktu = Selektor elemen sangat berguna ketika Anda ingin menerapkan gaya yang serupa ke semua elemen yang memiliki jenis tag yang sama. Sebagai contoh, dapat menggunakan selektor elemen cocok untuk mengatur gaya default untuk semua paragraf (<p>) atau semua judul level 1 h1 di halaman web.
 
     2. Selektor Universal (*)
     Manfaat = Selektor ini memilih semua elemen di dalam dokumen HTML. Ini merupakan pilihan yang sangat kuat dan bisa digunakan untuk mengatur gaya default atau menghapus margin/padding di seluruh halaman.
