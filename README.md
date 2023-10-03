@@ -339,10 +339,12 @@ Selanjutnya membuat berkas HTML baru pada folder main/templates dengan nama edit
 
 
 Masukkan fungsi yang telah dibuat pada urls.py agar dapat dipanggil pada main.html
-        from main.views import edit_product
+
+    from main.views import edit_product
 
 Lalu tambahkan url ke urlpatterns dengan cara berikut
-        path('edit-product/<int:id>', edit_product, name='edit_product'),
+        
+    path('edit-product/<int:id>', edit_product, name='edit_product'),
 
 Panggil dan buat button edit_product yang telah dibuat ke main.html dengan kode 
 
