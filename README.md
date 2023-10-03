@@ -298,3 +298,59 @@ Referensi:
 Rohandi, M., Husain, N., & Bay, I. (2018). Pengembangan mobile-assisted language learning menggunakan user centered design. Jurnal Nasional Teknik Elektro Dan Teknologi Informasi (Jnteti), 7(1). https://doi.org/10.22146/jnteti.v7i1.397
 
 >5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+- [x] Menambahkan fitur Delete, Edit untuk product dalam tabel
+
+Hal pertama yang dilakukan dalam membuat fitur Edit ialah membuat fungsi edit_product yang menerima parameter request dan id_product dalam file views.py pada subdirektori main. 
+
+    "def edit_product(request, id_product):
+        # Get product berdasarkan ID
+        product = Product.objects.get(pk = id_product)
+
+        # Set product sebagai instance dari form
+        form = ProductForm(request.POST or None, instance=product)
+
+        if form.is_valid() and request.method == "POST":
+            # Simpan form dan kembali ke halaman awal
+            form.save()
+            return HttpResponseRedirect(reverse('main:show_main'))
+
+        context = {'form': form}
+        return render(request, "edit_product.html", context)"
+
+
+Selanjutnya membuat berkas HTML baru pada folder main/templates dengan nama edit_product.html yang berisikan:
+
+    <h1>Edit Product</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Edit Product"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+    {% endblock %}
+
+
+Masukkan fungsi yang telah dibuat pada urls.py agar dapat dipanggil pada main.html
+    "from main.views import edit_product"
+
+Lalu tambahkan url ke urlpatterns dengan cara berikut
+    "path('edit-product/<int:id>', edit_product, name='edit_product'),"
+
+Panggil edit_product yang telah dibuat ke main.html dengan kode 
+
+    <a href="{% url 'main:edit_product' product.id %}">
+                        <button>Edit</button>
+                    </a>
+
+
+- [x] Kustomisasi halaman login, register, add product, edit product semenarik mungkin.
+
+    saya memanfaatkan inline CSS dengan menyertakan elemen <style> di bagian atas HTML. Saya memilih inline CSS karena menurut saya ini adalah opsi yang lebih sederhana dan sesuai untuk pemula dalam mengatur dan menggunakannya.
