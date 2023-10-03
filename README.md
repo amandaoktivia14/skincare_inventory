@@ -303,7 +303,7 @@ Rohandi, M., Husain, N., & Bay, I. (2018). Pengembangan mobile-assisted language
 
 Hal pertama yang dilakukan dalam membuat fitur Edit ialah membuat fungsi edit_product yang menerima parameter request dan id_product dalam file views.py pada subdirektori main. 
 
-    "def edit_product(request, id_product):
+    def edit_product(request, id_product):
         # Get product berdasarkan ID
         product = Product.objects.get(pk = id_product)
 
@@ -316,7 +316,7 @@ Hal pertama yang dilakukan dalam membuat fitur Edit ialah membuat fungsi edit_pr
             return HttpResponseRedirect(reverse('main:show_main'))
 
         context = {'form': form}
-        return render(request, "edit_product.html", context)"
+        return render(request, "edit_product.html", context)
 
 
 Selanjutnya membuat berkas HTML baru pada folder main/templates dengan nama edit_product.html yang berisikan:
@@ -339,12 +339,12 @@ Selanjutnya membuat berkas HTML baru pada folder main/templates dengan nama edit
 
 
 Masukkan fungsi yang telah dibuat pada urls.py agar dapat dipanggil pada main.html
-    "from main.views import edit_product"
+        from main.views import edit_product
 
 Lalu tambahkan url ke urlpatterns dengan cara berikut
-    "path('edit-product/<int:id>', edit_product, name='edit_product'),"
+        path('edit-product/<int:id>', edit_product, name='edit_product'),
 
-Panggil edit_product yang telah dibuat ke main.html dengan kode 
+Panggil dan buat button edit_product yang telah dibuat ke main.html dengan kode 
 
     <a href="{% url 'main:edit_product' product.id %}">
                         <button>Edit</button>
