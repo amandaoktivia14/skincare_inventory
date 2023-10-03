@@ -221,7 +221,8 @@ Otorisasi : Proses yang menentukan diizinkannya atau tidak penggunayang telah me
 
 - [x] Element Selectror adalah jenis selektor CSS yang digunakan untuk menargetkan elemen dalam HTML berdasarkan jenis tagnya. Setiap jenis selektor CSS memiliki kegunaan dan penggunaan yang berbeda, tergantung pada kebutuhan desain dan struktur HTML yang sedang digunakan.
 
-- [x] 1. Selektor Elemen (Tag) 
+- [x] 
+    1. Selektor Elemen (Tag) 
     Manfaat = Selektor ini digunakan untuk merujuk pada semua elemen HTML yang memiliki jenis tag tertentu. Ini adalah jenis selektor yang sangat umum dan mempengaruhi semua elemen yang cocok dengan jenis tag tersebut.
 
     Waktu = Selektor elemen sangat berguna ketika Anda ingin menerapkan gaya yang serupa ke semua elemen yang memiliki jenis tag yang sama. Sebagai contoh, dapat menggunakan selektor elemen cocok untuk mengatur gaya default untuk semua paragraf (<p>) atau semua judul level 1 h1 di halaman web.
@@ -245,3 +246,55 @@ Otorisasi : Proses yang menentukan diizinkannya atau tidak penggunayang telah me
     Manfaat = Selektor ini memberikan Anda kemampuan untuk memilih elemen berdasarkan atribut-atribut HTML mereka, seperti href, src, atau bahkan atribut kustom yang Anda buat sendiri.
 
     Waktu = Seletor ini berguna ketika Anda ingin memilih elemen berdasarkan atribut tertentu. Sebagai contoh, Anda dapat menggunakannya untuk mengatur gaya untuk semua tautan eksternal (elemen `<a>` dengan atribut `href` yang merujuk ke luar).
+
+>2. Jelaskan HTML5 Tag yang kamu ketahui.
+- [x] <html> = Elemen root yang digunakan sebagai awalan dan akhiran dari seluruh dokumen HTML.
+- [x] <head> = Elemen untuk mengikutsertai informasi meta serta judul web, menghubungkan dokumen dengan berkas eksternal (stylesheet dan skrip JavaScript).
+- [x] <link> = Tag untuk menghubungkan dokumen HTML dengan berkas eksternal (stylesheet CSS)
+- [x] <title> = Tag untuk menandai judul dari halaman weh yang akan ditampilkan pada bilah judul browser.
+- [x] <meta> = Elemen untuk menyediakan informasi meta (deskripsi halaman, karakter encoding, dll) kepada user.
+- [x] <style> = Elemen untuk menyeting atau menentukan gaya tampilan halaman web denggunakan CSS(Cascading Style Sheets) secara internal.
+- [x] <script/> = Tag untuk menyisipkan skrip JavaScript dalam halaman web.
+- [x] <body> = Elemen yang berisikan seluruh konten yang ditampilkan dalam web (gambar, vidio, teks, dll).
+- [x] <div> = Elemen untuk mengatur dan mengelompokkan konten dalam sebuah blok yang tampilannya dapat diubah dengan CSS.
+- [x] <h1>...<h6> = Tag untuk menentukan tingkat kepentingan judul halaman web, (<h1>=terbesar dan utama, <h6>=terkecil).
+- [x] <p> = Tag untuk menampilkan paragraf teks.
+- [x] <a> = Tag untuk membuat tautan/hyperlink ke halaman web atau berkas lain.
+- [x] <img> = Elemen untuk menampilkan gambar pada halaman web.
+- [x] <table>, <tr>, <th>, <td> = Tag untuk membuat tabel dan elemen-elemen di dalamnya. 
+- [x] <ul>, <ol>, <li> = Digunakan untuk membuat daftar tak terurut (unordered list) dan daftar terurut - (ordered list) serta elemen-elemen dalam daftar tersebut
+- [x] <form>, <input>, <textarea>, <button> = Tag untuk membuat formulir dan elemen dalam formulir(kotak input, area teks, tombol submit).
+- [x] <footer>, <header>, <nav>, <section>, <article> = Tag untuk mengorganisir konten halaman web menjadi bagian-bagian yang lebih terstruktur(header, footer, dan artikel).
+- [x] <canvas> = Elemen untuk menggambar grafis atau animasi menggunakan JavaScript.
+- [x] <video> & <audio> = Tag untuk menyematkan video dan audio ke dalam halaman web.
+- [x] <svg> = Tag untuk menyisipkan grafik vektor dalam format SVG (Scalable Vector Graphics) ke dalam halaman web.
+
+>3. Jelaskan perbedaan margin dan padding.
+- [x] Margin
+- Mengacu pada kesenjangan antara batas dua buah elemen
+- Berkaitan dengan celah ruang di luar elemen
+- Elemen internal(background) tidak mempengaruhi margin
+- Dapat diotomatisasi
+- Bilangan bulat adalah nilai numerik margin
+- Nilai margin mengggunakan properti invers(penurunan nilai akan meningkatkan garis margin, dan sebaliknya)
+
+- [x] Padding
+- Mengacu pada ruang antara konten suatu elemen dan batasnya
+- Berkaitan dengan kesenjangan ruang dalam suatu elemen
+- Elemen internal apapun mempengaruhi padding(background)
+- Otomatisasi tidak tersedia
+- Hanya bilangan real positif yang memenuhi syarat padding
+- Nilai padding digunakan untuk mengontrol ukuran elemen
+
+>4. Jelaskan perbedaan CSS Tailwind dan Bootstrap, kapan sebaiknya menggunakan Bootstrap dibanding Tailwind? dan sebaliknya.
+
+- [x] Bootstrap adalah kerangka kerja yang sudah mapan, banyak digunakan yang menyediakan kumpulan komponen dan gaya pra-desain yang mudah disesuaikan . Bootstrap mengikuti pendekatan pengembangan web yang lebih tradisional, di mana kelas digunakan untuk menerapkan gaya pada elemen HTML. Bootstrap memiliki komunitas yang besar dan dokumentasi yang lengkap, sehingga memudahkan pengembang untuk mencari dukungan dan sumber daya. 
+ 
+- [x] Tailwind adalah kerangka kerja lebih baru yang mengadopsi pendekatan CSS yang berfokus pada utilitas. Kerangka kerja ini menyediakan kelas-kelas yang dapat digunakan untuk menerapkan gaya-gaya tertentu pada elemen, sehingga memungkinkan fleksibilitas dan penyesuaian yang lebih besar. Pengembang dapat dengan mudah menggabungkan dan memodifikasi kelas-kelas tersebut untuk menciptakan gaya-gaya unik. Tailwind juga memiliki ukuran file yang lebih kecil dibandingkan dengan Bootstrap, yang dapat menghasilkan waktu muat yang lebih cepat untuk situs web. 
+ 
+- [x] Pilihan antara Bootstrap dan Tailwind tergantung pada persyaratan dan preferensi proyek yang spesifik. Jika Anda membutuhkan cara yang cepat dan mudah untuk membuat situs web responsif dengan komponen-komponen pra-desain, maka Bootstrap mungkin menjadi pilihan yang lebih baik . Bootstrap cocok untuk proyek-proyek yang membutuhkan pendekatan pengembangan web yang lebih tradisional dan di mana penyesuaian bukanlah prioritas utama. Di sisi lain, jika Anda lebih menyukai pendekatan yang lebih fleksibel dan dapat disesuaikan dalam styling, maka Tailwind mungkin lebih cocok, kerangka kerja ini memungkinkan kontrol yang lebih detail terhadap gaya-gaya dan memudahkan pembuatan desain-desain unik. Tailwind cocok untuk proyek-proyek yang membutuhkan penyesuaian yang ekstensif dan di mana pendekatan CSS yang berfokus pada utilitas sesuai dengan alur kerja pengembangan.  
+  
+Referensi:
+Rohandi, M., Husain, N., & Bay, I. (2018). Pengembangan mobile-assisted language learning menggunakan user centered design. Jurnal Nasional Teknik Elektro Dan Teknologi Informasi (Jnteti), 7(1). https://doi.org/10.22146/jnteti.v7i1.397
+
+>5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
