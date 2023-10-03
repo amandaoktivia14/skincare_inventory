@@ -247,27 +247,27 @@ Otorisasi : Proses yang menentukan diizinkannya atau tidak penggunayang telah me
 
     Waktu = Seletor ini berguna ketika Anda ingin memilih elemen berdasarkan atribut tertentu. Sebagai contoh, Anda dapat menggunakannya untuk mengatur gaya untuk semua tautan eksternal (elemen `<a>` dengan atribut `href` yang merujuk ke luar).
 
->2. Jelaskan HTML5 Tag yang kamu ketahui.
-- [x] <html/> = Elemen root yang digunakan sebagai awalan dan akhiran dari seluruh dokumen HTML.
-- [x] <head/> = Elemen untuk mengikutsertai informasi meta serta judul web, menghubungkan dokumen dengan berkas eksternal (stylesheet dan skrip JavaScript).
-- [x] <link/> = Tag untuk menghubungkan dokumen HTML dengan berkas eksternal (stylesheet CSS)
-- [x] <title/> = Tag untuk menandai judul dari halaman weh yang akan ditampilkan pada bilah judul browser.
-- [x] <meta/> = Elemen untuk menyediakan informasi meta (deskripsi halaman, karakter encoding, dll) kepada user.
-- [x] <style> = Elemen untuk menyeting atau menentukan gaya tampilan halaman web denggunakan CSS(Cascading Style Sheets) secara internal.
-- [x] <script/> = Tag untuk menyisipkan skrip JavaScript dalam halaman web.
-- [x] <body/> = Elemen yang berisikan seluruh konten yang ditampilkan dalam web (gambar, vidio, teks, dll).
-- [x] <div/> = Elemen untuk mengatur dan mengelompokkan konten dalam sebuah blok yang tampilannya dapat diubah dengan CSS.
-- [x] <h1/>...<h6/> = Tag untuk menentukan tingkat kepentingan judul halaman web, (h1=terbesar dan utama, h6=terkecil).
-- [x] <p/> = Tag untuk menampilkan paragraf teks.
-- [x] <a/> = Tag untuk membuat tautan/hyperlink ke halaman web atau berkas lain.
-- [x] <img/> = Elemen untuk menampilkan gambar pada halaman web.
-- [x] <table/>, <tr/>, <th/>, <td/> = Tag untuk membuat tabel dan elemen-elemen di dalamnya. 
-- [x] <ul/>, <ol/>, <li/> = Digunakan untuk membuat daftar tak terurut (unordered list) dan daftar terurut - (ordered list) serta elemen-elemen dalam daftar tersebut
-- [x] <form/>, <input/>, <textarea/>, <button/> = Tag untuk membuat formulir dan elemen dalam formulir(kotak input, area teks, tombol submit).
-- [x] <footer/>, <header/>, <nav/>, <section/>, <article/> = Tag untuk mengorganisir konten halaman web menjadi bagian-bagian yang lebih terstruktur(header, footer, dan artikel).
-- [x] <canvas/> = Elemen untuk menggambar grafis atau animasi menggunakan JavaScript.
-- [x] <video/> & <audio/> = Tag untuk menyematkan video dan audio ke dalam halaman web.
-- [x] <svg/> = Tag untuk menyisipkan grafik vektor dalam format SVG (Scalable Vector Graphics) ke dalam halaman web.
+>2. Jelaskan HTML5 Tag yang kamu ketahui (<...>).
+- [x] html = Elemen root yang digunakan sebagai awalan dan akhiran dari seluruh dokumen HTML.
+- [x] head = Elemen untuk mengikutsertai informasi meta serta judul web, menghubungkan dokumen dengan berkas eksternal (stylesheet dan skrip JavaScript).
+- [x] link = Tag untuk menghubungkan dokumen HTML dengan berkas eksternal (stylesheet CSS)
+- [x] title = Tag untuk menandai judul dari halaman weh yang akan ditampilkan pada bilah judul browser.
+- [x] meta = Elemen untuk menyediakan informasi meta (deskripsi halaman, karakter encoding, dll) kepada user.
+- [x] style = Elemen untuk menyeting atau menentukan gaya tampilan halaman web denggunakan CSS(Cascading Style Sheets) secara internal.
+- [x] script = Tag untuk menyisipkan skrip JavaScript dalam halaman web.
+- [x] body = Elemen yang berisikan seluruh konten yang ditampilkan dalam web (gambar, vidio, teks, dll).
+- [x] div = Elemen untuk mengatur dan mengelompokkan konten dalam sebuah blok yang tampilannya dapat diubah dengan CSS.
+- [x] h1...h6 = Tag untuk menentukan tingkat kepentingan judul halaman web, (h1=terbesar dan utama, h6=terkecil).
+- [x] p = Tag untuk menampilkan paragraf teks.
+- [x] a = Tag untuk membuat tautan/hyperlink ke halaman web atau berkas lain.
+- [x] img = Elemen untuk menampilkan gambar pada halaman web.
+- [x] table, tr, th, td = Tag untuk membuat tabel dan elemen-elemen di dalamnya. 
+- [x] ul, ol, li = Digunakan untuk membuat daftar tak terurut (unordered list) dan daftar terurut - (ordered list) serta elemen-elemen dalam daftar tersebut
+- [x] form, input, textarea, button = Tag untuk membuat formulir dan elemen dalam formulir(kotak input, area teks, tombol submit).
+- [x] footer, header, nav, section, article = Tag untuk mengorganisir konten halaman web menjadi bagian-bagian yang lebih terstruktur(header, footer, dan artikel).
+- [x] canvas = Elemen untuk menggambar grafis atau animasi menggunakan JavaScript.
+- [x] video & audio = Tag untuk menyematkan video dan audio ke dalam halaman web.
+- [x] svg = Tag untuk menyisipkan grafik vektor dalam format SVG (Scalable Vector Graphics) ke dalam halaman web.
 
 >3. Jelaskan perbedaan margin dan padding.
 - [x] Margin
