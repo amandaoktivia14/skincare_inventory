@@ -374,38 +374,38 @@ Perbedaan utama antara asynchronous dan synchronous programming terletak pada ba
 
 >2 .Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
 
-    Paradigma event-driven programming adalah pendekatan pemrograman di mana program merespons kejadian atau peristiwa yang terjadi secara asinkron. Ini berarti program akan menjalankan tugas tertentu hanya ketika suatu peristiwa atau kejadian yang telah ditentukan terjadi, tanpa harus secara aktif menunggu atau mengawasi perubahan. Paradigma ini sangat umum dalam pemrograman web, khususnya saat menggunakan JavaScript dan AJAX.
+Paradigma event-driven programming adalah pendekatan pemrograman di mana program merespons kejadian atau peristiwa yang terjadi secara asinkron. Ini berarti program akan menjalankan tugas tertentu hanya ketika suatu peristiwa atau kejadian yang telah ditentukan terjadi, tanpa harus secara aktif menunggu atau mengawasi perubahan. Paradigma ini sangat umum dalam pemrograman web, khususnya saat menggunakan JavaScript dan AJAX.
 
 - [x]Contoh penerapannya:
 
 
 >3. Jelaskan penerapan asynchronous programming pada AJAX.
 
-    Asynchronous programming pada AJAX adalah cara di mana aplikasi web dapat berkomunikasi dengan server tanpa harus menunggu atau menghentikan segalanya. Ini membuat aplikasi web tetap responsif dan efisien. Pada dasarnya, kita mengirimkan permintaan ke server dan memberikan instruksi tentang apa yang harus dilakukan ketika respons dari server sudah siap. Contoh sederhana adalah mengambil data dari server dan menampilkannya di halaman web tanpa mengganggu pengalaman pengguna.
+Asynchronous programming pada AJAX adalah cara di mana aplikasi web dapat berkomunikasi dengan server tanpa harus menunggu atau menghentikan segalanya. Ini membuat aplikasi web tetap responsif dan efisien. Pada dasarnya, kita mengirimkan permintaan ke server dan memberikan instruksi tentang apa yang harus dilakukan ketika respons dari server sudah siap. Contoh sederhana adalah mengambil data dari server dan menampilkannya di halaman web tanpa mengganggu pengalaman pengguna.
 
 >4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
 
-    Penerapan AJAX menggunakan Fetch API dan library jQuery adalah dua pendekatan yang berbeda dalam mengelola permintaan asynchron di aplikasi web. Berikut perbedaanya berdasarkan beberapa faktor:
+Penerapan AJAX menggunakan Fetch API dan library jQuery adalah dua pendekatan yang berbeda dalam mengelola permintaan asynchron di aplikasi web. Berikut perbedaanya berdasarkan beberapa faktor:
 
-    1. **Kemudahan Penggunaan**:
-    - **Fetch API**: Lebih baru dan sederhana dalam sintaksis.
-    - **jQuery**: Lebih lengkap tetapi mungkin terasa lebih berat jika hanya digunakan untuk AJAX.
+1. **Kemudahan Penggunaan**:
+- **Fetch API**: Lebih baru dan sederhana dalam sintaksis.
+- **jQuery**: Lebih lengkap tetapi mungkin terasa lebih berat jika hanya digunakan untuk AJAX.
 
-    2. **Ukuran File**:
-    - **Fetch API**: Lebih kecil karena merupakan bagian dari JavaScript modern.
-    - **jQuery**: Lebih besar karena merupakan library terpisah.
+2. **Ukuran File**:
+- **Fetch API**: Lebih kecil karena merupakan bagian dari JavaScript modern.
+- **jQuery**: Lebih besar karena merupakan library terpisah.
 
-    3. **Kompatibilitas**:
-    - **Fetch API**: Dukungan untuk browser modern, mungkin memerlukan dukungan tambahan untuk browser lama.
-    - **jQuery**: Mendukung banyak browser, termasuk yang lama.
+3. **Kompatibilitas**:
+- **Fetch API**: Dukungan untuk browser modern, mungkin memerlukan dukungan tambahan untuk browser lama.
+- **jQuery**: Mendukung banyak browser, termasuk yang lama.
 
-    4. **Ekosistem dan Dokumentasi**:
-    - **Fetch API**: Banyak tutorial dan dokumentasi, tetapi mungkin tidak sebanyak jQuery.
-    - **jQuery**: Ekosistem dan dokumentasi yang kuat, terutama bagi pemula.
+4. **Ekosistem dan Dokumentasi**:
+- **Fetch API**: Banyak tutorial dan dokumentasi, tetapi mungkin tidak sebanyak jQuery.
+- **jQuery**: Ekosistem dan dokumentasi yang kuat, terutama bagi pemula.
 
-    5. **Performa**:
-    - **Fetch API**: Cenderung lebih cepat dan efisien dalam penggunaan sumber daya.
-    - **jQuery**: Memiliki fitur-fitur bagus, namun dalam beberapa situasi, Fetch API bisa lebih cepat karena lebih ringan.
+5. **Performa**:
+- **Fetch API**: Cenderung lebih cepat dan efisien dalam penggunaan sumber daya.
+- **jQuery**: Memiliki fitur-fitur bagus, namun dalam beberapa situasi, Fetch API bisa lebih cepat karena lebih ringan.
 
    Pilihan antara Fetch API dan jQuery untuk AJAX tergantung pada kebutuhan. Menurut pendapat saya, jika ingin menggunakan pendekatan yang lebih modern, lebih ringan, dan tidak tergantung pada library eksternal, maka Fetch API adalah pilihan yang baik. 
 
