@@ -356,3 +356,57 @@ Panggil dan buat button edit_product yang telah dibuat ke main.html dengan kode
 - [x] Kustomisasi halaman login, register, add product, edit product semenarik mungkin.
 
     saya memanfaatkan inline CSS dengan menyertakan elemen <style> di bagian atas HTML. Saya memilih inline CSS karena menurut saya ini adalah opsi yang lebih sederhana dan sesuai untuk pemula dalam mengatur dan menggunakannya.
+
+
+## Tugas 6
+>1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+
+- [x]synchronous programming: 
+   
+   model pemrograman di mana tugas-tugas dieksekusi satu per satu secara berurutan. Dalam model ini, setiap tugas harus menunggu tugas sebelumnya selesai sebelum dapat dimulai. Ini berarti bahwa eksekusi program terblokir sampai setiap tugas selesai. Synchronous programming sederhana dan mudah dipahami, tetapi dapat menyebabkan ketidakefisienan dan penundaan jika tugas-tugas membutuhkan waktu lama untuk selesai.  
+    
+- [x]asynchronous programming: 
+
+    model pemrograman di mana tugas-tugas dapat dieksekusi secara independen dan konkuren. Dalam model ini, tugas-tugas dapat dimulai dan dieksekusi secara paralel, tanpa harus menunggu tugas sebelumnya selesai. Asynchronous programming memungkinkan eksekusi non-blocking, yang berarti program dapat terus menjalankan tugas-tugas lain sambil menunggu beberapa tugas tertentu selesai. Hal ini dapat meningkatkan kinerja dan responsivitas keseluruhan program, terutama dalam situasi di mana tugas-tugas melibatkan menunggu sumber daya eksternal atau melakukan operasi yang memakan waktu.  
+    
+Perbedaan utama antara asynchronous dan synchronous programming terletak pada bagaimana tugas-tugas dieksekusi dan bagaimana program mengelola alur eksekusi. Dalam synchronous programming, tugas-tugas dieksekusi satu per satu secara berurutan, sedangkan dalam asynchronous programming, tugas-tugas dapat dieksekusi secara independen dan konkuren. Asynchronous programming memungkinkan eksekusi non-blocking, yang dapat meningkatkan kinerja dan responsivitas, terutama dalam situasi di mana tugas-tugas melibatkan menunggu sumber daya eksternal atau melakukan operasi yang memakan waktu.
+
+
+>2 .Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+
+    Paradigma event-driven programming adalah pendekatan pemrograman di mana program merespons kejadian atau peristiwa yang terjadi secara asinkron. Ini berarti program akan menjalankan tugas tertentu hanya ketika suatu peristiwa atau kejadian yang telah ditentukan terjadi, tanpa harus secara aktif menunggu atau mengawasi perubahan. Paradigma ini sangat umum dalam pemrograman web, khususnya saat menggunakan JavaScript dan AJAX.
+
+- [x]Contoh penerapannya:
+
+
+>3. Jelaskan penerapan asynchronous programming pada AJAX.
+
+    Asynchronous programming pada AJAX adalah cara di mana aplikasi web dapat berkomunikasi dengan server tanpa harus menunggu atau menghentikan segalanya. Ini membuat aplikasi web tetap responsif dan efisien. Pada dasarnya, kita mengirimkan permintaan ke server dan memberikan instruksi tentang apa yang harus dilakukan ketika respons dari server sudah siap. Contoh sederhana adalah mengambil data dari server dan menampilkannya di halaman web tanpa mengganggu pengalaman pengguna.
+
+>4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+
+    Penerapan AJAX menggunakan Fetch API dan library jQuery adalah dua pendekatan yang berbeda dalam mengelola permintaan asynchron di aplikasi web. Berikut perbedaanya berdasarkan beberapa faktor:
+
+    1. **Kemudahan Penggunaan**:
+    - **Fetch API**: Lebih baru dan sederhana dalam sintaksis.
+    - **jQuery**: Lebih lengkap tetapi mungkin terasa lebih berat jika hanya digunakan untuk AJAX.
+
+    2. **Ukuran File**:
+    - **Fetch API**: Lebih kecil karena merupakan bagian dari JavaScript modern.
+    - **jQuery**: Lebih besar karena merupakan library terpisah.
+
+    3. **Kompatibilitas**:
+    - **Fetch API**: Dukungan untuk browser modern, mungkin memerlukan dukungan tambahan untuk browser lama.
+    - **jQuery**: Mendukung banyak browser, termasuk yang lama.
+
+    4. **Ekosistem dan Dokumentasi**:
+    - **Fetch API**: Banyak tutorial dan dokumentasi, tetapi mungkin tidak sebanyak jQuery.
+    - **jQuery**: Ekosistem dan dokumentasi yang kuat, terutama bagi pemula.
+
+    5. **Performa**:
+    - **Fetch API**: Cenderung lebih cepat dan efisien dalam penggunaan sumber daya.
+    - **jQuery**: Memiliki fitur-fitur bagus, namun dalam beberapa situasi, Fetch API bisa lebih cepat karena lebih ringan.
+
+   Pilihan antara Fetch API dan jQuery untuk AJAX tergantung pada kebutuhan. Menurut pendapat saya, jika ingin menggunakan pendekatan yang lebih modern, lebih ringan, dan tidak tergantung pada library eksternal, maka Fetch API adalah pilihan yang baik. 
+
+>5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
