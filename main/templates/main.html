@@ -61,7 +61,7 @@
         }
 
         /* Style for buttons */
-        button {
+        button, .btn-primary {
             background-color: #ff6b81;
             color: white;
             border: none;
@@ -82,14 +82,138 @@
     <h1>Skincare Inventory Page</h1>
 
     <h5>Customer Name:</h5>
-    <p>{{ name }}</p>
+    <p>{{name}}</p>
 
     <h5>Class:</h5>
-    <p>{{ class }}</p>
+    <p>{{class}}</p>
 
-    <!-- Rest of your code -->
 
-    <table>
+    <table id="product_table"></table>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form" onsubmit="return false;">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="col-form-label">Category:</label>
+                            <input type="text" class="form-control" id="category" name="category"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="col-form-label">Price:</label>
+                            <input type="number" class="form-control" id="price" name="price"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="amount" class="col-form-label">Amount:</label>
+                            <input type="number" class="form-control" id="amount" name="amount"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="col-form-label">Description:</label>
+                            <textarea class="form-control" id="description" name="description"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <br />
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
+
+    <!-- <a href="{% url 'main:create_product' %}">
+        <button>
+            Add New Product
+        </button>
+    </a>
+        -->
+        
+        <h5>Last login: {{ last_login }}</h5>
+        <a href="{% url 'main:logout' %}">
+            <button>Logout</button>
+        </a>
+
+        <script>
+        async function getProducts() {
+            return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+        }
+
+        async function refreshProducts() {
+            document.getElementById("product_table").innerHTML = ""
+            const products = await getProducts()
+            let htmlString = `<tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Amount</th>
+                <th>Description</th>
+            </tr>`
+            products.forEach((item) => {
+                htmlString += `\n<tr>
+                <td>${item.fields.name}</td>
+                <td>${item.fields.category}</td>
+                <td>${item.fields.price}</td>
+                <td>${item.fields.amount}</td>
+                <td>${item.fields.description}</td>
+            </tr>` 
+            })
+        
+            document.getElementById("product_table").innerHTML = htmlString
+        }
+
+        refreshProducts()
+        
+        function addProduct() {
+            fetch("{% url 'main:add_product_ajax' %}", {
+                method: "POST",
+                body: new FormData(document.querySelector('#form'))
+            }).then(refreshProducts)
+
+            document.getElementById("form").reset()
+            return false
+        }
+        
+        document.getElementById("button_add").onclick = addProduct
+    </script>
+        
+
+
+
+
+    <!-- <div class="row">
+        {% for product in products %}
+            <div class="col-md-4 product-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <p class="card-text">Amount: {{product.amount}}</p>
+                        <p class="card-text">Description: {{product.description}}</p>
+                        <p class="card-text">Price: {{product.price}}</p>
+                        <p class="card-text">Date Added: {{product.date_added}}</p>
+                        <a href="{% url 'main:add_product' product.id %}" class="btn btn-success">Add Amount</a>
+                        <a href="{% url 'main:reduce_product' product.id %}" class="btn btn-warning">Decrease Amount</a>
+                        <a href="{% url 'main:delete_product' product.id %}" class="btn btn-danger">Remove Item</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div> -->
+
+
+    <!-- <table>
         <tr>
             <th>Name</th>
             <th>Price</th>
@@ -124,16 +248,24 @@
                 </td>
             </tr>
         {% endfor %}
-    </table>
+    </table> -->
 
-    <br />
 
-    <a href="{% url 'main:create_product' %}">
+
+    <!-- <a href="{% url 'main:create_product' %}">
+    <button ></button>
+    </a> -->
+
+    <!-- <a href="{% url 'main:create_product' %}">
         <button>Add New Product</button>
-    </a>
+    </a> -->
 
-    <h5>Last login: {{ last_login }}</h5>
+
+    <!-- <h5>Last login: {{ last_login }}</h5>
     <a href="{% url 'main:logout' %}">
         <button>Logout</button>
-    </a>
+    </a> -->
+
+
+
 {% endblock content %}
