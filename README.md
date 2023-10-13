@@ -361,11 +361,11 @@ Panggil dan buat button edit_product yang telah dibuat ke main.html dengan kode
 ## Tugas 6
 >1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
 
-- [x]synchronous programming: 
+- [x] synchronous programming: 
    
    model pemrograman di mana tugas-tugas dieksekusi satu per satu secara berurutan. Dalam model ini, setiap tugas harus menunggu tugas sebelumnya selesai sebelum dapat dimulai. Ini berarti bahwa eksekusi program terblokir sampai setiap tugas selesai. Synchronous programming sederhana dan mudah dipahami, tetapi dapat menyebabkan ketidakefisienan dan penundaan jika tugas-tugas membutuhkan waktu lama untuk selesai.  
     
-- [x]asynchronous programming: 
+- [x] asynchronous programming: 
 
     model pemrograman di mana tugas-tugas dapat dieksekusi secara independen dan konkuren. Dalam model ini, tugas-tugas dapat dimulai dan dieksekusi secara paralel, tanpa harus menunggu tugas sebelumnya selesai. Asynchronous programming memungkinkan eksekusi non-blocking, yang berarti program dapat terus menjalankan tugas-tugas lain sambil menunggu beberapa tugas tertentu selesai. Hal ini dapat meningkatkan kinerja dan responsivitas keseluruhan program, terutama dalam situasi di mana tugas-tugas melibatkan menunggu sumber daya eksternal atau melakukan operasi yang memakan waktu.  
     
@@ -376,8 +376,18 @@ Perbedaan utama antara asynchronous dan synchronous programming terletak pada ba
 
 Paradigma event-driven programming adalah pendekatan pemrograman di mana program merespons kejadian atau peristiwa yang terjadi secara asinkron. Ini berarti program akan menjalankan tugas tertentu hanya ketika suatu peristiwa atau kejadian yang telah ditentukan terjadi, tanpa harus secara aktif menunggu atau mengawasi perubahan. Paradigma ini sangat umum dalam pemrograman web, khususnya saat menggunakan JavaScript dan AJAX.
 
-- [x]Contoh penerapannya:
+- [x] Contoh penerapannya:
+Pada Html, diberikan program script untuk add product
 
+    function addProduct() {
+        fetch("{% url 'main:add_product_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshProducts)
+
+        document.getElementById("form").reset()
+        return false
+    }
 
 >3. Jelaskan penerapan asynchronous programming pada AJAX.
 
@@ -410,3 +420,121 @@ Penerapan AJAX menggunakan Fetch API dan library jQuery adalah dua pendekatan ya
    Pilihan antara Fetch API dan jQuery untuk AJAX tergantung pada kebutuhan. Menurut pendapat saya, jika ingin menggunakan pendekatan yang lebih modern, lebih ringan, dan tidak tergantung pada library eksternal, maka Fetch API adalah pilihan yang baik. 
 
 >5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+- [x] Mengubah tugas 5 yang telah dibuat sebelumnya menjadi menggunakan AJAX.
+
+Ubahlah kode tabel data item agar dapat mendukung AJAX GET. Untuk mengubah kode tabel menjadi tabel pertama tama kita harus membuat fungsi pada main.html untuk memanggil tabel, dengan mengubah html tabel menjadi kode berikut ini
+
+        <table id="product_table"></table>
+
+Lakukan pengambilan task menggunakan AJAX GET. Buat Fungsi pada views.py untuk membuat fungsi mengambil get product
+
+        @login_required(login_url='/login')
+    def get_product_json(request):
+        product_item = Product.objects.filter(user=request.user)
+        return HttpResponse(serializers.serialize('json', product_item))
+
+Selanjutnya setelah membuat fungsi pada views.py, buat routing pada urls.py, import get product json agar bisa di tambahkan, selanjutnya agar bisa dipanggil pada html, tambahkan urlspath dengan kode berikut
+
+        path('get-product/', get_product_json, name='get_product_json'),
+
+Setelah menambahkan urls.py, buat javascript dengan menambahkan <script> oada main.html dengan menambahkan kode:
+
+        async function getProducts() {
+            return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+        }
+
+- [x] AJAX POST
+
+Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan item. Untuk membuat tombol membuka modal form untuk menambahkan item menambahkannya pada navbar, dengan memanggil:
+
+        <a class="nav-link" type="button"  data-bs-target="#exampleModal" data-bs-toggle="modal" style="color: #4162FF; font-weight: 600; padding-right: 20px;" >Make Product by Ajax</a>
+
+
+Dengan kode modal pada html untuk membuat modal yang nantinya berguna untuk add product:
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form" onsubmit="return false;">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name"></input>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Artist:</label>
+                        <input type="text" class="form-control" id="artist" name="artist"></input>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="price" class="col-form-label">Price:</label>
+                        <input type="number" class="form-control" id="price" name="price"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <textarea class="form-control" id="description" name="description"></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label for="image_url" class="col-form-label">Image Url:</label>
+                        <textarea class="form-control" id="image_url" name="image_url"></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label for="detail" class="col-form-label">Detail:</label>
+                        <textarea class="form-control" id="detail" name="detail"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+            </div>
+        </div>
+    </div>
+
+
+ Buatlah fungsi view baru untuk menambahkan item baru ke dalam basis data. Pada file views.py import @crsf_exempt dan menambahkan fungsi add product ajax pada code:
+
+    @csrf_exempt
+    def add_product_ajax(request):
+        if request.method == 'POST':
+            name = request.POST.get("name")
+            artist = request.POST.get("artist")
+            price = request.POST.get("price")
+            description = request.POST.get("description")
+            image_url = request.POST.get("image_url")
+            detail = request.POST.get("detail")
+            user = request.user
+            new_product = Product(name=name,artist = artist, price=price, description=description, user=user, image_url = image_url, detail=detail )
+            new_product.save()
+
+            return HttpResponse(b"CREATED", status=201)
+
+        return HttpResponseNotFound()
+
+Buatlah path /create-ajax/ yang mengarah ke fungsi view yang baru kamu buat. Setelah menambahkan fungi add_product_ajax pada path, dengan cara membuka urls.py setelah itu mengimpor add_product_ajax dan menambahkan urlpatterns dengan code:
+
+        path('create-product-ajax/', add_product_ajax, name='add_product_ajax'),
+
+Hubungkan form yang telah kamu buat di dalam modal kamu ke path /create-ajax/. Untuk menghubungkan form dengan path create-ajax buat function addProduct kedalam kode <script>, berikut merupakan kodenya:
+
+    function addProduct() {
+        fetch("{% url 'main:add_product_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshProducts).then(refreshCard)
+
+        document.getElementById("form").reset()
+        return false
+    }
+
+    document.getElementById("button_add").onclick = addProduct
+
+
+- [x] Melakukan add-commit-push ke GitHub
