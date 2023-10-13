@@ -377,17 +377,17 @@ Perbedaan utama antara asynchronous dan synchronous programming terletak pada ba
 Paradigma event-driven programming adalah pendekatan pemrograman di mana program merespons kejadian atau peristiwa yang terjadi secara asinkron. Ini berarti program akan menjalankan tugas tertentu hanya ketika suatu peristiwa atau kejadian yang telah ditentukan terjadi, tanpa harus secara aktif menunggu atau mengawasi perubahan. Paradigma ini sangat umum dalam pemrograman web, khususnya saat menggunakan JavaScript dan AJAX.
 
 - [x] Contoh penerapannya:
+
 Pada Html, diberikan program script untuk add product
 
-    function addProduct() {
-        fetch("{% url 'main:add_product_ajax' %}", {
-            method: "POST",
-            body: new FormData(document.querySelector('#form'))
-        }).then(refreshProducts)
-
-        document.getElementById("form").reset()
-        return false
-    }
+        function addProduct() {
+            fetch("{% url 'main:add_product_ajax' %}", {
+                method: "POST",
+                body: new FormData(document.querySelector('#form'))
+            }).then(refreshProducts)
+            document.getElementById("form").reset()
+            return false
+        }
 
 >3. Jelaskan penerapan asynchronous programming pada AJAX.
 
@@ -429,7 +429,7 @@ Ubahlah kode tabel data item agar dapat mendukung AJAX GET. Untuk mengubah kode 
 
 Lakukan pengambilan task menggunakan AJAX GET. Buat Fungsi pada views.py untuk membuat fungsi mengambil get product
 
-        @login_required(login_url='/login')
+    @login_required(login_url='/login')
     def get_product_json(request):
         product_item = Product.objects.filter(user=request.user)
         return HttpResponse(serializers.serialize('json', product_item))
@@ -453,50 +453,44 @@ Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan it
 
 Dengan kode modal pada html untuk membuat modal yang nantinya berguna untuk add product:
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form" onsubmit="return false;">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="name" class="col-form-label">Name:</label>
+                                <input type="text" class="form-control" id="name" name="name"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="category" class="col-form-label">Category:</label>
+                                <input type="text" class="form-control" id="category" name="category"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="price" class="col-form-label">Price:</label>
+                                <input type="number" class="form-control" id="price" name="price"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="amount" class="col-form-label">Amount:</label>
+                                <input type="number" class="form-control" id="amount" name="amount"></input>
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="col-form-label">Description:</label>
+                                <textarea class="form-control" id="description" name="description"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-                <form id="form" onsubmit="return false;">
-                    {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="name" class="col-form-label">Name:</label>
-                        <input type="text" class="form-control" id="name" name="name"></input>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="name" class="col-form-label">Artist:</label>
-                        <input type="text" class="form-control" id="artist" name="artist"></input>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="price" class="col-form-label">Price:</label>
-                        <input type="number" class="form-control" id="price" name="price"></input>
-                    </div>
-                    <div class="mb-3">
-                        <label for="description" class="col-form-label">Description:</label>
-                        <textarea class="form-control" id="description" name="description"></textarea>
-                    </div>
-                    <div class="mb-4">
-                        <label for="image_url" class="col-form-label">Image Url:</label>
-                        <textarea class="form-control" id="image_url" name="image_url"></textarea>
-                    </div>
-                    <div class="mb-4">
-                        <label for="detail" class="col-form-label">Detail:</label>
-                        <textarea class="form-control" id="detail" name="detail"></textarea>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
-            </div>
-        </div>
-    </div>
 
 
  Buatlah fungsi view baru untuk menambahkan item baru ke dalam basis data. Pada file views.py import @crsf_exempt dan menambahkan fungsi add product ajax pada code:
