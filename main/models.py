@@ -9,3 +9,7 @@ class Product(models.Model):
     amount = models.IntegerField()
     description = models.TextField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+# class Employee(models.Models):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     department = models.CharField(max_length=300)
